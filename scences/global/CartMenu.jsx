@@ -8,3 +8,9 @@ import { shades } from "../../theme";
 import { decreaseCount, IncreaseCount, removeFromCart, setIsCartOpen } from "../../state";
 import { useNavigate } from "react-router-dom";
 
+// Custom MUI Box component with specific css properties
+const FlexBox = styled(Box)`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+`;
