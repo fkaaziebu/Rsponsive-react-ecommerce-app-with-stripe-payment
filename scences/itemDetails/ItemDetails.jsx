@@ -21,4 +21,27 @@ const ItemDetails = () => {
     const handleChange = (event, newValue) => {
         setValue(newValue);
     }
+
+    async function getItem() {
+        const item = await fetch(
+            `http://localhost:2000/api/items/${itemId}?populate=image`,
+            { method: "GET" }
+        );
+        const itemJson = await item.json();
+        setItem(itemJson.data);
+    };
+
+    async function getItems() {
+        const items = await fetch(
+            `http://localhost:2000/api/items?populate=image`,
+            { method: "GET" }
+        );
+        const itemsJson = await items.json();
+        setItems(itemsJson.data);
+    };
+
+    useEffect(() => {
+        getItem();
+        getItems();
+    }, [itemId]);
 }
