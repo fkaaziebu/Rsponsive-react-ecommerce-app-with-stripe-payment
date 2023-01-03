@@ -22,8 +22,9 @@ const MainCarousel = () => {
     <Carousel
       infiniteLoop={true}
       showThumbs={false}
-      showIndicators={false}
+      showIndicators={true}
       showStatus={false}
+      animationHandler
       renderArrowPrev={(onClickHandler, hasPrev, label) => (
         <IconButton
           onClick={onClickHandler}
